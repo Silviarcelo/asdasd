@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Design | Industrial & Commercial Construction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           1. CSS VARIABLES & RESET
+           ========================================= */
+        :root {
+            --rio-blue: #005696; /* Deep Ocean Blue */
+            --steel-grey: #4A5568; /* Structural Steel */
+            --concrete-light: #EDF2F7; /* Background */
+            --accent-orange: #FF6B00; /* Safety/Construction Accent */
+            --white: #FFFFFF;
+            --text-dark: #1A202C;
+            --text-muted: #718096;
+            
+            --font-head: 'Oswald', sans-serif;
+            --font-body: 'Heebo', sans-serif;
+            
+            --container-width: 1200px;
+            --section-padding: 100px 0;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            color: var(--rio-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* =========================================
+           2. UTILITIES
+           ========================================= */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        .text-center { text-align: center; }
+
+        .section-subtitle {
+            display: block;
+            font-family: var(--font-head);
+            font-size: 0.9rem;
+            color: var(--accent-orange);
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            background: var(--rio-blue);
+            margin: 15px auto 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: var(--rio-blue);
+            color: var(--white);
+            font-family: var(--font-head);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--rio-blue);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--rio-blue);
+        }
+
+        /* =========================================
+           3. HEADER
+           ========================================= */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 20px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--rio-blue);
+            line-height: 1;
+        }
+
+        .logo span {
+            color: var(--accent-orange);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* =========================================
+           4. HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 86, 150, 0.7), rgba(26, 32, 44, 0.8)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            color: #E2E8F0;
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .hero .btn {
+            background-color: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+
+        .hero .btn:hover {
+            background-color: transparent;
+            color: var(--white);
+        }
+
+        /* =========================================
+           5. ABOUT US
+           ========================================= */
+        .about {
+            padding: var(--section-padding);
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            box-shadow: 20px 20px 0 var(--concrete-light);
+            border-bottom: 5px solid var(--rio-blue);
+        }
+
+        /* =========================================
+           6. SERVICES
+           ========================================= */
+        .services {
+            padding: var(--section-padding);
+            background-color: var(--concrete-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 4px;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--rio-blue);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--rio-blue);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           7. ADVANTAGES
+           ========================================= */
+        .advantages {
+            padding: var(--section-padding);
+            background-color: var(--text-dark);
+            color: var(--white);
+        }
+
+        .advantages .section-subtitle {
+            color: var(--accent-orange);
+        }
+
+        .advantages h2, .advantages h3 {
+            color: var(--white);
+        }
+
+        .advantages p {
+            color: #A0AEC0;
+        }
+
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .adv-item {
+            padding: 30px;
+            border: 1px solid #2D3748;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .adv-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* =========================================
+           8. PROCESS
+           ========================================= */
+        .process {
+            padding: var(--section-padding);
+            background-color: var(--white);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+            padding: 30px;
+            background: var(--concrete-light);
+            position: relative;
+            border-left: 4px solid var(--rio-blue);
+        }
+
+        .step-num {
+            font-family: var(--font-head);
+            font-size: 3rem;
+            color: rgba(0, 86, 150, 0.1);
+            font-weight: 700;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .step-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================================
+           9. CONTACT
+           ========================================= */
+        .contact {
+            padding: var(--section-padding);
+            background-color: var(--white);
+            border-top: 1px solid #eee;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            background-color: var(--rio-blue);
+            color: var(--white);
+            padding: 50px;
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+        }
+
+        .info-item h5 {
+            color: var(--accent-orange);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            color: var(--white);
+            font-weight: 400;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .contact-form {
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #E2E8F0;
+            background: #FAFAFA;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--rio-blue);
+            background: #fff;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background-color: #1A202C;
+            color: #718096;
+            padding: 60px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 3rem; }
+            .about-grid, .contact-container, .adv-grid { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; }
+            .nav-wrapper { flex-direction: column; gap: 20px; }
+            .contact-info { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">RIO DESIGN <span>CONSTRUCOES</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">Company</a></li>
+                    <li><a href="#services">Solutions</a></li>
+                    <li><a href="#advantages">Why Us</a></li>
+                    <li><a href="#process">Workflow</a></li>
+                    <li><a href="#contact">Inquiries</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Building the Backbone of <br>Rio's Commercial Future</h1>
+            <p>RIO DESIGN CONSTRUCOES PROJETOS E SERVICOS LTDA delivers precision-engineered non-residential structures and industrial facilities, merging functional aesthetics with rigorous construction standards.</p>
+            <a href="#contact" class="btn">Start Your Build</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <span class="section-subtitle">Our Profile</span>
+                <h2 class="section-title">Structural Integrity Meets Design</h2>
+                <p>Located in the vibrant heart of Rio de Janeiro, RIO DESIGN CONSTRUCOES PROJETOS E SERVICOS LTDA is a premier construction firm dedicated to the non-residential sector. Under the leadership of Silvio Marcelo Dos Santos Silva, we have established a reputation for executing complex industrial and commercial projects with unwavering precision.</p>
+                <p>Our firm believes that "design" in construction goes beyond appearance; it is about the intelligent integration of structural systems and operational efficiency. We specialize in navigating the unique logistical and regulatory landscape of Rio, ensuring seamless project delivery from groundbreaking to handover.</p>
+                <p>Our team consists of veteran engineers and architects committed to safety, sustainability, and innovation. We don't just build edifices; we construct the environments where Rio's business thrives.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rio Construction Site">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">What We Do</span>
+                <h2 class="section-title">Construction Capabilities</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">&#9874;</div> <h3>Industrial Facility Construction</h3>
+                    <p>We specialize in the erection of heavy-duty industrial buildings designed to withstand rigorous operational demands. From reinforced concrete foundations to wide-span steel superstructures, our team ensures your facility is optimized for logistics, machinery, and workflow efficiency.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">&#127970;</div> <h3>Commercial & Corporate Builds</h3>
+                    <p>Our firm delivers turnkey construction solutions for corporate headquarters, retail centers, and office complexes. We focus on creating modern, energy-efficient environments that enhance productivity and reflect your corporate identity.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">&#128202;</div> <h3>Technical Project Management</h3>
+                    <p>Beyond physical construction, we provide comprehensive project management and engineering consultancy services. We oversee the entire lifecycle of the build, from feasibility studies and architectural planning to cost control and on-site supervision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">The Rio Design Edge</span>
+                <h2 class="section-title">Why Partner With Us</h2>
+            </div>
+
+            <div class="adv-grid">
+                <div class="adv-item">
+                    <h3>Structural Innovation</h3>
+                    <p>We utilize cutting-edge construction methodologies and high-performance materials to ensure longevity and resilience against Rio's tropical climate and industrial wear.</p>
+                </div>
+                <div class="adv-item">
+                    <h3>Regulatory Mastery</h3>
+                    <p>Building in Rio de Janeiro requires deep local knowledge. We expertly navigate zoning laws, environmental regulations, and permitting processes to prevent costly delays.</p>
+                </div>
+                <div class="adv-item">
+                    <h3>Integrated Design-Build</h3>
+                    <p>By combining "Projetos" (Projects) and "Construcoes" (Construction), we eliminate the friction between designers and builders, resulting in a cohesive and efficient workflow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Our Blueprint</span>
+                <h2 class="section-title">Execution Lifecycle</h2>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <div class="step-content">
+                        <h3>Feasibility & Planning</h3>
+                        <p>We begin with a rigorous analysis of the site and operational requirements to develop a viable structural and architectural plan.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <div class="step-content">
+                        <h3>Mobilization & Build</h3>
+                        <p>Our teams deploy on-site, executing earthworks, structural assembly, and systems installation with strict adherence to the project timeline.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <div class="step-content">
+                        <h3>Commissioning & Handoff</h3>
+                        <p>We conduct exhaustive systems testing and quality inspections to ensure the facility is fully operational before the final key handover.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Get in Touch</span>
+                <h2 class="section-title">Initiate Your Project</h2>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h5>Headquarters</h5>
+                        <p>RIO DE JANEIRO, RJ<br>Brazil</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h5>Electronic Mail</h5>
+                        <p>info@riodesignprojetoseservicos.info</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h5>Key Principal</h5>
+                        <p>Silvio Marcelo Dos Santos Silva</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <input type="text" placeholder="Name" required>
+                            <input type="text" placeholder="Company Name">
+                        </div>
+                        <input type="email" placeholder="Email Address" required>
+                        <select>
+                            <option value="" disabled selected>Project Type</option>
+                            <option value="Industrial">Industrial Construction</option>
+                            <option value="Commercial">Commercial/Office</option>
+                            <option value="Consultancy">Project Management</option>
+                        </select>
+                        <textarea placeholder="Describe your construction needs..."></textarea>
+                        <button type="submit" class="btn">Submit Proposal Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 RIO DESIGN CONSTRUCOES PROJETOS E SERVICOS LTDA. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Nonresidential Building Construction & Design Services</p>
+        </div>
+    </footer>
+
+</body>
+</html>
